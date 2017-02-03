@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/Inventory/Inventory",
+    "pages/item/item",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#858DFF",
+    "navigationBarTitleText": "抽屉列表",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#ffffff",
+    "borderStyle": "black",
+    "backgroundColor": "#858DFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/mainshow2.png",
+        "selectedIconPath": "images/mainshow.png",
+        "text": "��ҳ"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "images/setting2.png",
+        "selectedIconPath": "images/setting.png",
+        "text": "��־"
+      }
+    ]
+  }
+}

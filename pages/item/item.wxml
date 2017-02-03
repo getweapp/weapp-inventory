@@ -1,0 +1,8 @@
+<view class="inventory">
+  <view class="inventoryitem">
+    <image class="pic" src="{{inventoryItem.url}}.png" mode="aspectFit"></image>
+    <view class="description">
+      {{inventoryItem.name}}
+    </view>
+  </view>
+</view>

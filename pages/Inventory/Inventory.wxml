@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="sliders">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="item.id">
+
+        <!--<block  wx:for="{{inventoryItem}}"  >-->
+        <swiper-item data-name="{{item.name}}" data-url="{{item.link}}" bindtap="onItemTap">
+          <image src="{{item}}" class="slide-image" style="width: 100%" mode="aspectFit" />
+
+          <!--<image src="{{item.link}}.jpg" class="slide-image" style="width: 100%" mode="aspectFit"  />-->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--tab begin-->
+  <view class="weui-tab">
+    <view class="weui-navbar">
+      <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+          <view class="weui-navbar__title">{{item}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+    <view class="weui-tab__panel">
+      <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+        <!--inventory begin -->
+        <view class="inventory">
+          <view class="inventoryitem" data-name="{{item.name}}" data-url="{{item.link}}" bindtap="onItemTap" wx:for="{{inventoryAccessories}}" wx:key="item.id">
+            <image class="pic" src="{{item.link}}.jpg" mode="aspectFit"></image>
+            <view class="description"> {{item.name}} </view>
+          </view>
+        </view>
+
+        <!--inventory end-->
+      </view>
+      <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+
+        <!--inventory begin -->
+        <view class="inventory">
+          <view class="inventoryitem" data-name="{{item.name}}" data-url="{{item.link}}" bindtap="onItemTap" wx:for="{{inventoryFixAssets}}" wx:key="item.id">
+            <image class="pic" src="{{item.link}}.jpg" mode="aspectFit"></image>
+            <view class="description"> {{item.name}} </view>
+          </view>
+        </view>
+        <!--inventory end-->
+
+      </view>
+      <view class="weui-tab__content" hidden="{{activeIndex != 2}}">iPhone List...</view>
+    </view>
+  </view>
+
+  <!--tab end-->
+
+  <!--<view class="inventory">
+    <view class="inventoryitem" data-name="{{item.name}}" data-url="{{item.link}}" bindtap="onItemTap" wx:for="{{inventoryItem}}">
+      <image class="pic" src="{{item.link}}.jpg" mode="aspectFit"></image>
+      <view class="description"> {{item.name}} </view>
+    </view>
+  </view>-->
+</view>
